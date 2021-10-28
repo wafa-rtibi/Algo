@@ -1,0 +1,25 @@
+ALGORITHM Phrase
+VAR
+    i,nbr_mots, longeur ,nbr_voy:INTEGER;
+    str:STRING;   
+
+
+BEGIN
+    nbr_mots:=0;
+    nbr_voy:=0;
+    longeur:=0;
+    i:=0;
+    Read(str)
+    WHILE (str[i]<>".") DO
+        if(str[i]==" ")
+        {nbr_mots++}
+        if(str[i] in {a,e,i,o,u,y})
+        {nbr_voy++}
+        i:=i+1;
+    END_WHILE
+    i++
+    nbr_mots++
+    Write("la phrase contient"+i+" caractéres")
+    Write("la phrase contient"+nbr_mots+" mots")
+    Write("la phrase contient"+nbr_voy+" voyelles")
+END
