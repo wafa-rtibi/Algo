@@ -1,7 +1,7 @@
 ALGORITHM Phrase
 VAR
     i,nbr_mots, longeur ,nbr_voy:INTEGER;
-    str:STRING;   
+    str:STRING[];   
 
 
 BEGIN
