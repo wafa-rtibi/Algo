@@ -1,25 +1,25 @@
 ALGORITHM Phrase
 VAR
-    i,nbr_mots, longeur ,nbr_voy:INTEGER;
+    i,nbr_mots,nbr_char ,nbr_voy:INTEGER :=0;
     str:STRING[];   
 
 
 BEGIN
-    nbr_mots:=0;
-    nbr_voy:=0;
-    longeur:=0;
-    i:=0;
+   
+    write("entrez une phrase se termine par une point")
     Read(str)
-    WHILE (str[i]<>".") DO
-        if(str[i]==" ")
+    FOR ( i ; i<str.length ;i++) DO
+        if(str[i]==" " or str[i]==".")
         {nbr_mots++}
+        if(str[i]<>" ")
+        {nbr_char++}
         if(str[i] in {a,e,i,o,u,y})
         {nbr_voy++}
-        i:=i+1;
-    END_WHILE
-    i++
-    nbr_mots++
-    Write("la phrase contient"+i+" caractéres")
+      
+    END_FOR
+    
+    
+    Write("la phrase contient"+nbr_char+" caractéres")
     Write("la phrase contient"+nbr_mots+" mots")
     Write("la phrase contient"+nbr_voy+" voyelles")
 END
